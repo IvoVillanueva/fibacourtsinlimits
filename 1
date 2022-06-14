@@ -20,19 +20,19 @@
 }
 
 court_points = data.frame(
-  x = c(-width / 2, -width / 2, width / 2, 
+  x = c(width / 2, width / 2, -width / 2, -width / 2, width / 2, 
         outer_key_width / 2, outer_key_width / 2, -outer_key_width / 2, -outer_key_width / 2,
         -backboard_width / 2, backboard_width / 2, 
         0, 0),
-  y = c(0, height, 0, key_height, key_height, 0,
+  y = c(height, 0, 0, height, height, 0, key_height, key_height, 0,
         backboard_offset, backboard_offset, 
         backboard_offset, backboard_offset + neck_length),
-  desc = c(rep("perimeter", 4), rep("outer_key", 4), rep("backboard", 2),
+  desc = c(rep("perimeter", 5), rep("outer_key", 4), rep("backboard", 2),
            rep("neck", 2))
 )
 
 
-court_points <- court_points %>% filter(desc != "perimeter")
+#court_points <- court_points %>% filter(desc != "perimeter")
 
 # define foul circle
 foul_circle = circle_points(center = c(0, key_height), radius = inner_key_width / 2)
