@@ -117,6 +117,24 @@ line_side_left <- data.frame(
   x = c(-7.5, -7.5),
   y = c(0, y_cut)
 )
+
+line_right$desc <- "line_right"
+line_left$desc <- "line_left"
+line_ft_right$desc <- "line_ft_right"
+line_ft_left$desc <- "line_ft_left"
+circle_cut$desc <- "circle_cut"
+line_side_right$desc <- "line_side_right"
+line_side_left$desc <- "line_side_left"
+
+line_right$dash <- FALSE
+line_left$dash <- FALSE
+line_ft_right$dash <- FALSE
+line_ft_left$dash <- FALSE
+circle_cut$dash <- FALSE
+line_side_right$dash <- FALSE
+line_side_left$dash <- FALSE
+
+
 court_zones <- rbind(
   court_points,
   line_right,
