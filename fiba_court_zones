@@ -118,22 +118,12 @@ line_side_left <- data.frame(
   y = c(0, y_cut)
 )
 court_zones <- rbind(
-
-  # court base
   court_points,
-
-  # líneas inclinadas
-  data.frame(x = line_right$x, y = line_right$y, desc = "line_right"),
-  data.frame(x = line_left$x,  y = line_left$y,  desc = "line_left"),
-
-  # FT lines
-  data.frame(x = line_ft_right$x, y = line_ft_right$y, desc = "line_ft_right"),
-  data.frame(x = line_ft_left$x,  y = line_ft_left$y,  desc = "line_ft_left"),
-
-  # arco exterior (el tuyo recortado)
-  data.frame(x = circle_cut$x, y = circle_cut$y, desc = "outer_arc"),
-
-  # líneas de banda nuevas
-  data.frame(x = line_side_right$x, y = line_side_right$y, desc = "side_right"),
-  data.frame(x = line_side_left$x,  y = line_side_left$y,  desc = "side_left")
+  line_right,
+  line_left,
+  line_ft_right,
+  line_ft_left,
+  circle_cut,
+  line_side_right,
+  line_side_left
 )
