@@ -58,21 +58,18 @@ court_points = mutate(court_points , dash = (desc == "foul_circle_bottom"))
 
 
 # Define the lines that separate the zones
-r_start <- 2.5
-r_end <- 7.5
-y_target <- 2.99
-
-dy <- y_target - hoop_center_y
-hipotenusa <- sqrt(r_end^2 + dy^2)
+pendiente <- (three_point_side_height - hoop_center_y) / (three_point_side_radius - 0)
+medium_key_width <- outer_key_width / 2
+medium_width <- width / 2
 
 line_right <- data.frame(
-  x = c(r_start * r_end / hipotenusa, r_end),
-  y = c(hoop_center_y + r_start * dy / hipotenusa, y_target)
+  y = c(medium_key_width * pendiente + hoop_center_y, medium_width * pendiente + hoop_center_y),
+  x = c(medium_key_width, medium_width)
 )
 
 line_left <- data.frame(
-  x = -c(r_start * r_end / hipotenusa, r_end),
-  y = c(hoop_center_y + r_start * dy / hipotenusa, y_target)
+  y = c(medium_key_width * pendiente + hoop_center_y, medium_width * pendiente + hoop_center_y),
+  x = c(-medium_key_width, -medium_width)
 )
 
 # Define the lines that separate the FT area
