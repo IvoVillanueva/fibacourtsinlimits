@@ -139,6 +139,6 @@ court_zones <- rbind(
   line_ft_right,
   line_ft_left,
   circle_cut,
-  line_side_right,
-  line_side_left
+  #line_side_right,
+  #line_side_left
 )
